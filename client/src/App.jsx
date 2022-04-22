@@ -67,7 +67,7 @@ function App() {
           <p><sup>{countOnlineInRoom}</sup> <strong>Users Online In Current Room</strong></p>
         </li>
         <li class="nav-item">
-          <p><sup>{countOnlineInApp}</sup> <strong>Users Online In Current App</strong></p>
+          <p><sup>{countOnlineInApp}</sup> <strong>Users Online In App</strong></p>
         </li>
       </ul>
         <div className="row" style={{marginTop : "20px", marginLeft: "20px", marginRight: "20px"}}>
@@ -77,17 +77,14 @@ function App() {
                       Room Card
                     </div>
                     <div className="card-body">
-                      <div className='row g-3'> 
-                        <div className="row">
-                              <div className="col">
-                                <label className='form-label'>Room</label>
+                        <div className="row g-3 justify-content-center">
+                              <div className="col-10">
                                 <input className='form-control' placeholder='Room...' onChange={(e)=>{ setRoom((prev)=>({...prev, currentRoom: e.target.value}))}} type="text" id="fname" name="fname"/>
                               </div>
-                        </div>  
                               <div className="col  text-center">
-                                <button className='btn btn-primary' onClick={handleRoom} type="submit" >Join Room</button>
+                                <button className='btn btn-primary' onClick={handleRoom} type="submit" >Join</button>
                               </div> 
-                      </div> 
+                        </div>  
                   </div>
                 </div>              
               </div> 
@@ -113,26 +110,22 @@ function App() {
                       {isTyping ? <p>Sedang Typing...</p>:false}
                 </div>
                 <div className="card-body">
-                   <div className='row g-3'> 
-                      <div className="row">
-                            <div className="col">
-                              <label className='form-label'>Username</label>
+                      <div className="row g-3 justify-content-center">
+                            <div className="col-5">
                               <input className='form-control' placeholder='Username...' onChange={(e) => { 
                                                                                           setMessage((prev)=>({...prev, username : e.target.value}))                                                                                 
                                                                                         }} type="text" id="fname" name="fname"/>
                             </div>
-                            <div className="col">
-                              <label className='form-label'>Message</label>
-                              <input className='form-control' placeholder='Type Message...' onChange={(e) => {
+                            <div className="col-5">
+                              <input className='form-control' placeholder='Message...' onChange={(e) => {
                                                                                             setMessage((prev)=>({...prev, message : e.target.value}))
                                                                                             }} type="text" id="lname" name="lname"/>                        
                             </div>
-                          </div>  
-                            <div className="col  text-center">
-                              <button className='btn btn-success' onClick={handleSendMessage} type="submit" >Send</button>
-                            </div> 
-                    </div>   
-                </div>
+                              <div className="col text-center">
+                                <button className='btn btn-success' onClick={handleSendMessage} type="submit" >Send</button>
+                              </div> 
+                        </div>   
+                  </div>
               </div>              
             </div>
         </div>
