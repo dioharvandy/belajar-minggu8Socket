@@ -1,8 +1,8 @@
 version: "3.8"
 services:
     server:
-      image: registry.devops.mmi-pt.com/dio-backend:0.0.1
-      container_name: dio-backend:0.0.1
+      image: registry.devops.mmi-pt.com/diobackend:0.0.1
+      container_name: diobackend:0.0.1
       build: .
       ports:
         - "3000:3000"
